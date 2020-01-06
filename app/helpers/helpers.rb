@@ -1,8 +1,6 @@
 class Helpers
 
-  def self.current_user(session)
-    @user= User.create(username: params["username"], password:params["password"], balance:params["balance"])
-    @user.save
-    @user
+  def self.current_user(session_hash)
+    @user = User.find(session_hash[:user_id])
   end
 end
